@@ -2,7 +2,7 @@
 
 This is a simple script to create pdf file with 2 months.
 
-![Pdf screenshot][https://upload.bessarabov.ru/bessarabov/Q2T5GyXtwro_pKrNbZLhbVhvqJw.png]
+![Pdf screenshot](https://upload.bessarabov.ru/bessarabov/Q2T5GyXtwro_pKrNbZLhbVhvqJw.png)
 
 ## How to use it
 
