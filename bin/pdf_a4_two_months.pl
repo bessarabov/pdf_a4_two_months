@@ -122,7 +122,7 @@ sub main {
     $start_year_month //= 'undef';
 
     if ($start_year_month !~ /^\d{4}-\d{2}$/a) {
-        warn "Incorrect START_YEAR_MONTH. Expected YYYY-MM, for example 2015-04, but got $start_year_month.\n";
+        warn "Incorrect START_YEAR_MONTH. Expected YYYY-MM, for example 2015-05, but got $start_year_month.\n";
         exit 1;
     }
 
