@@ -10,7 +10,7 @@ You need to [install Docker](https://docs.docker.com/installation/).
 
 Then you need to build image:
 
-    docker build --tag pdf_a4_two_months .
+    ./build
 
 And then start it, specifying the start year and month:
 

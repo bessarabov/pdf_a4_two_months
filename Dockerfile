@@ -1,22 +1,22 @@
-FROM ubuntu:14.04
+FROM ubuntu:14.04.3
 
-ENV UPDATED_AT 2015-05-01
-
-RUN apt-get update
-
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     curl \
     gcc \
     make
 
-RUN curl -L http://cpanmin.us | perl - App::cpanminus
+RUN curl --silent https://raw.githubusercontent.com/miyagawa/cpanminus/1.7039/cpanm | perl - App::cpanminus
+RUN cpanm Carton@v1.0.22
 
-RUN cpanm PDF::Create
-RUN cpanm Moment
-RUN cpanm boolean
+ADD cpanfile /app/
+ADD cpanfile.snapshot /app/
+
+WORKDIR /app
+RUN carton install --deployment
 
 RUN mkdir /data
 
-COPY bin/ /app
+ADD bin/ /app/
+ADD cmd /app/
 
-CMD /app/pdf_a4_two_months.pl
+CMD ./cmd
